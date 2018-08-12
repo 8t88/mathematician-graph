@@ -1,0 +1,13 @@
+{
+	"nodes": [
+		{"id": "Lagrange", "group": 1}
+		{"id": "Euler", "group": 1}
+
+	],
+	"links": [
+		{"source": "Lagrange", "target": "Euler", "value": 1}
+		{"source": "Euler", "target": "Lagrange", "Value": 1}
+
+	]
+
+}
