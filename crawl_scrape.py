@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import scraper
+import scraper_utils as scraper
 
 def get_indexes(url):
 
@@ -42,17 +42,10 @@ def get_biographies(index):
 #for index in index_list:
 #    biograhpies = get_biographies(index)
 
-home_url = "http://www-groups.dcs.st-andrews.ac.uk/~history/BiogIndex.html"
+#home_url = "http://www-groups.dcs.st-andrews.ac.uk/~history/BiogIndex.html"
 
-index_list = get_indexes(home_url)
-print(index_list)
+#index_list = get_indexes(home_url)
+#print(index_list)
 
-lst = get_biographies(index_list[4])
-print(lst)
-
-all_bios = []
-#for index in index_list[0:-3]:
-#    lst = get_biographies(index)
-#    all_bios.append(lst)
-
-
+#lst = get_biographies(index_list[4])
+#print(lst)

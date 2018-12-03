@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import scraper
+import scraper_utils as scraper
 
 test_url = "http://www-groups.dcs.st-andrews.ac.uk/~history/Biographies/Lagrange.html"
 
