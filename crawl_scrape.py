@@ -22,19 +22,23 @@ def get_biographies(index):
     print(drill_url)
 
     drill_html = scraper.plain_get(drill_url)
-    drill_html_parse = BeautifulSoup(drill_html, 'html.parser')
-    drill_links = drill_html_parse.select('a')
-    
-    #format into list of dicts with {name:url} for easier iterating later
-    for ref in drill_links:
-        if 'Biographies' in ref['href']:
-            bio_url = ref['href'][2:]#removing the ..
+    try:
+        drill_html_parse = BeautifulSoup(drill_html, 'html.parser')
+        drill_links = drill_html_parse.select('a')
+        #format into list of dicts with {name:url} for easier iterating later
+        if len(drill_links)>0:
+            for ref in drill_links:
+                if 'Biographies' in ref['href']:
+                    bio_url = ref['href'][2:]#removing the ..
 
-            bio_name_html = bio_url.split('/')[-1]
-            bio_name = bio_name_html.split('.')[0]
+                    bio_name_html = bio_url.split('/')[-1]
+                    bio_name = bio_name_html.split('.')[0]
 
-            biographies_list.append({"name":bio_name, "url": bio_url})
-
+                    biographies_list.append({"name":bio_name, "url": bio_url})
+        else:
+            print("no links")
+    except Exception as e:
+        print(e)
     return biographies_list
 
 

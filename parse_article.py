@@ -4,9 +4,10 @@ import scraper_utils as scraper
 test_url = "http://www-groups.dcs.st-andrews.ac.uk/~history/Biographies/Lagrange.html"
 
 def parse_article(url):
+    home = "http://www-groups.dcs.st-andrews.ac.uk/~history"
     mathematicians_list = []
 
-    raw_html = scraper.plain_get(url)
+    raw_html = scraper.plain_get(home+url)
     raw_html_soup = BeautifulSoup(raw_html, 'html.parser')
 
     links = raw_html_soup.select('a')
@@ -20,4 +21,4 @@ def parse_article(url):
     return mathematicians_list
 
 
-print(parse_article(test_url))
+#print(parse_article(test_url))
