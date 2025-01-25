@@ -2,7 +2,7 @@ import crawl_scrape as scrape
 import parse_article as pa
 import json
 
-home_url = "http://www-groups.dcs.st-andrews.ac.uk/~history/BiogIndex.html"
+home_url = "https://mathshistory.st-andrews.ac.uk/Biographies/chronological/"
 print("starting from home")
 index_list = scrape.get_indexes(home_url)
 #print(index_list)
